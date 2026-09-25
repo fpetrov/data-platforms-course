@@ -1,6 +1,6 @@
 # Результат проверки
 
-25 сентября 2026 года кластер team-30 проверен на четырех узлах Ubuntu 24.04 с OpenJDK 11 и Hadoop 3.4.3.
+Мы проверили кластер team-30 на четырех узлах Ubuntu 24.04 с OpenJDK 11 и Hadoop 3.4.3.
 
 Выполнены `verify.sh cluster.env --restart`, повторный `verify.sh cluster.env` и `cluster.sh status cluster.env`. Все команды завершились с кодом 0. Полный вывод проверки с перезапуском сохранен в [verification.txt](verification.txt).
 
