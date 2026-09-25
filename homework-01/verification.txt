@@ -1,0 +1,28 @@
+DataNode: 3 живых, dead/stale/decommission/maintenance: 0, сбои дисков: 0
+Блоки: missing/corrupt/under-replicated: 0, safe mode: OFF
+Checkpoint: 2026-09-25T15:35:40.367000+00:00
+Replication 3 set: /user/hadoop/homework-01/sample.bin
+Waiting for /user/hadoop/homework-01/sample.bin .... done
+DataNode: 3 живых, dead/stale/decommission/maintenance: 0, сбои дисков: 0
+Блоки: missing/corrupt/under-replicated: 0, safe mode: OFF
+Checkpoint: 2026-09-25T15:35:40.367000+00:00
+Файл: 2621440 байт, SHA256 b1ccfef6cbd6d79b9b77f126b2a2f1a58d8f3d54beccdeeec3b7f772453ffcee
+Connecting to namenode via http://team-30-nn:9870/fsck?ugi=hadoop&files=1&blocks=1&locations=1&path=%2Fuser%2Fhadoop%2Fhomework-01%2Fsample.bin
+FSCK: HEALTHY, 3 блока, по 3 реплики
+Stopping namenodes on [team-30-nn]
+Stopping datanodes
+Stopping secondary namenodes [team-30-01]
+Starting namenodes on [team-30-nn]
+Starting datanodes
+Starting secondary namenodes [team-30-01]
+DataNode: 3 живых, dead/stale/decommission/maintenance: 0, сбои дисков: 0
+Блоки: missing/corrupt/under-replicated: 0, safe mode: OFF
+Checkpoint: 2026-09-25T15:41:53.832000+00:00
+Файл: 2621440 байт, SHA256 b1ccfef6cbd6d79b9b77f126b2a2f1a58d8f3d54beccdeeec3b7f772453ffcee
+Connecting to namenode via http://team-30-nn:9870/fsck?ugi=hadoop&files=1&blocks=1&locations=1&path=%2Fuser%2Fhadoop%2Fhomework-01%2Fsample.bin
+FSCK: HEALTHY, 3 блока, по 3 реплики
+После stop/start файл сохранен без повторной записи.
+team-30-nn: процессы и логи в порядке
+team-30-00: процессы и логи в порядке
+team-30-01: процессы и логи в порядке
+Проверка HDFS пройдена.
