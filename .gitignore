@@ -1,0 +1,17 @@
+AGENTS.md
+.agents/
+.idea/
+.vscode/
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.cache/
+cluster.env
+.env
+.env.*
+*.pem
+*.key
+id_ed25519*
+id_rsa*
+*.log
