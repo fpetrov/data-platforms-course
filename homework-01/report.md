@@ -2,7 +2,15 @@
 
 Мы проверили кластер team-30 на четырех узлах Ubuntu 24.04 с OpenJDK 11 и Hadoop 3.4.3.
 
-Выполнены `verify.sh cluster.env --restart`, повторный `verify.sh cluster.env` и `cluster.sh status cluster.env`. Все команды завершились с кодом 0. Полный вывод проверки с перезапуском сохранен в [verification.txt](verification.txt).
+Повторить проверку можно на edge от пользователя `team`, из корня репозитория:
+
+```bash
+bash homework-01/scripts/verify.sh homework-01/cluster.env --restart
+bash homework-01/scripts/verify.sh homework-01/cluster.env
+bash homework-01/scripts/cluster.sh status homework-01/cluster.env
+```
+
+Все команды завершились с кодом 0. Полный вывод проверки с перезапуском сохранен в [verification.txt](verification.txt).
 
 | Проверка | Результат |
 | --- | --- |
