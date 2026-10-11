@@ -1,0 +1,223 @@
+Итоговая проверка
+
+Проверка main: 2cbfff4827ff184dafde00a65218a43cc62e7cb1
+Интерфейсы опубликованы. Откройте http://127.0.0.1:18080 через tunnel.sh на Mac.
+Начало проверки: 2026-10-11T14:26:24Z
+Каталог HDFS: /user/hadoop/homework-02/20261011T142624Z-WUTH7K
+team-30-en: ApplicationHistoryServer, JobHistoryServer, ResourceManager, WebAppProxyServer
+team-30-nn: DataNode, NameNode, NodeManager
+team-30-00: DataNode, NodeManager
+team-30-01: DataNode, NodeManager, SecondaryNameNode
+YARN: 3 здоровых NM, 4608 МиБ, 6 vcores
+DataNode: 3 живых, dead/stale/decommission/maintenance: 0, сбои дисков: 0
+Блоки: missing/corrupt/under-replicated: 0, safe mode: OFF
+Checkpoint: 2026-10-11T13:43:11.060000+00:00
+team-30-en: 4 текущих логов: ERROR/FATAL нет
+team-30-nn: 1 текущих логов: ERROR/FATAL нет
+team-30-00: 1 текущих логов: ERROR/FATAL нет
+team-30-01: 1 текущих логов: ERROR/FATAL нет
+Веб: указатель, 12 интерфейсов, 110 CSS/JS, REST/JMX и ссылки доступны
+Веб: все 13 портов слушают только 127.0.0.1
+Веб: POST=405, logLevel/prof/delegation token=403
+Файл работы 1: b1ccfef6cbd6d79b9b77f126b2a2f1a58d8f3d54beccdeeec3b7f772453ffcee
+RUNNING: application_1791728377373_0001
+Tracking UI: http://127.0.0.1:19099/proxy/application_1791728377373_0001/
+2026-10-11 14:26:46,999 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at team-30-en/10.30.0.10:8032
+2026-10-11 14:26:47,199 INFO client.AHSProxy: Connecting to Application History server at team-30-en/10.30.0.10:10200
+2026-10-11 14:26:47,534 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /tmp/hadoop-yarn/staging/hadoop/.staging/job_1791728377373_0001
+2026-10-11 14:26:47,968 INFO input.FileInputFormat: Total input files to process : 2
+2026-10-11 14:26:48,040 INFO mapreduce.JobSubmitter: number of splits:2
+2026-10-11 14:26:48,358 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1791728377373_0001
+2026-10-11 14:26:48,358 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2026-10-11 14:26:48,587 INFO conf.Configuration: resource-types.xml not found
+2026-10-11 14:26:48,588 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2026-10-11 14:26:49,350 INFO impl.YarnClientImpl: Submitted application application_1791728377373_0001
+2026-10-11 14:26:49,435 INFO mapreduce.Job: The url to track the job: http://team-30-en:9099/proxy/application_1791728377373_0001/
+2026-10-11 14:26:49,435 INFO mapreduce.Job: Running job: job_1791728377373_0001
+2026-10-11 14:26:59,888 INFO mapreduce.Job: Job job_1791728377373_0001 running in uber mode : false
+2026-10-11 14:26:59,889 INFO mapreduce.Job:  map 0% reduce 0%
+2026-10-11 14:27:14,080 INFO mapreduce.Job:  map 100% reduce 0%
+2026-10-11 14:27:21,137 INFO mapreduce.Job:  map 100% reduce 100%
+2026-10-11 14:27:21,145 INFO mapreduce.Job: Job job_1791728377373_0001 completed successfully
+2026-10-11 14:27:21,255 INFO mapreduce.Job: Counters: 55
+	File System Counters
+		FILE: Number of bytes read=57
+		FILE: Number of bytes written=934148
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=17000303
+		HDFS: Number of bytes written=45
+		HDFS: Number of read operations=11
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+		HDFS: Number of bytes read erasure-coded=0
+	Job Counters 
+		Killed map tasks=1
+		Launched map tasks=2
+		Launched reduce tasks=1
+		Data-local map tasks=2
+		Total time spent by all maps in occupied slots (ms)=45944
+		Total time spent by all reduces in occupied slots (ms)=8604
+		Total time spent by all map tasks (ms)=22972
+		Total time spent by all reduce tasks (ms)=4302
+		Total vcore-milliseconds taken by all map tasks=22972
+		Total vcore-milliseconds taken by all reduce tasks=4302
+		Total megabyte-milliseconds taken by all map tasks=11761664
+		Total megabyte-milliseconds taken by all reduce tasks=2202624
+	Map-Reduce Framework
+		Map input records=1000000
+		Map output records=2500000
+		Map output bytes=27000000
+		Map output materialized bytes=63
+		Input split bytes=303
+		Combine input records=2500000
+		Combine output records=4
+		Reduce input groups=3
+		Reduce shuffle bytes=63
+		Reduce input records=4
+		Reduce output records=3
+		Spilled Records=8
+		Shuffled Maps =2
+		Failed Shuffles=0
+		Merged Map outputs=2
+		GC time elapsed (ms)=596
+		CPU time spent (ms)=10170
+		Physical memory (bytes) snapshot=715300864
+		Virtual memory (bytes) snapshot=6749425664
+		Total committed heap usage (bytes)=393216000
+		Peak Map Physical memory (bytes)=256573440
+		Peak Map Virtual memory (bytes)=2249342976
+		Peak Reduce Physical memory (bytes)=202518528
+		Peak Reduce Virtual memory (bytes)=2251227136
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=17000000
+	File Output Format Counters 
+		Bytes Written=45
+WordCount: содержимое совпало, SHA256 1b50553e28e9adb1b91b5dd52d9886e4feba1e83b116527a9f9ed8ba5d6374fb
+hadoop	1000000
+mapreduce	500000
+yarn	1000000
+YARN: application_1791728377373_0001, FINISHED/SUCCEEDED, MAPREDUCE, логи SUCCEEDED
+JHS: job_1791728377373_0001, SUCCEEDED, map 2/2, reduce 1/1, uber=false
+ATS: application_1791728377373_0001, YARN_APPLICATION_FINISHED/SUCCEEDED
+Агрегированные логи: 4 контейнера, stdout/syslog читаются
+Логи SHA256: 968a8207f1648aa7bf57c63a5c7a114dbbdc12f024279a158b203c0443a18d8b
+team-30-en: ApplicationHistoryServer, JobHistoryServer, ResourceManager, WebAppProxyServer
+team-30-nn: DataNode, NameNode, NodeManager
+team-30-00: DataNode, NodeManager
+team-30-01: DataNode, NodeManager, SecondaryNameNode
+Процессы HDFS сохранили PID.
+YARN: 3 здоровых NM, 4608 МиБ, 6 vcores
+WordCount: содержимое совпало, SHA256 1b50553e28e9adb1b91b5dd52d9886e4feba1e83b116527a9f9ed8ba5d6374fb
+hadoop	1000000
+mapreduce	500000
+yarn	1000000
+JHS: job_1791728377373_0001, SUCCEEDED, map 2/2, reduce 1/1, uber=false
+ATS: application_1791728377373_0001, YARN_APPLICATION_FINISHED/SUCCEEDED
+Агрегированные логи: 4 контейнера, stdout/syslog читаются
+Файл работы 1 сохранился без изменений.
+После stop/start сохранены результат, JHS, ATS и агрегированные логи. Новое задание не запускалось.
+team-30-en: ApplicationHistoryServer, JobHistoryServer, ResourceManager, WebAppProxyServer
+team-30-nn: DataNode, NameNode, NodeManager
+team-30-00: DataNode, NodeManager
+team-30-01: DataNode, NodeManager, SecondaryNameNode
+Процессы HDFS сохранили PID.
+YARN: 3 здоровых NM, 4608 МиБ, 6 vcores
+DataNode: 3 живых, dead/stale/decommission/maintenance: 0, сбои дисков: 0
+Блоки: missing/corrupt/under-replicated: 0, safe mode: OFF
+Checkpoint: 2026-10-11T13:43:11.060000+00:00
+team-30-en: 4 текущих логов: ERROR/FATAL нет
+team-30-nn: 1 текущих логов: ERROR/FATAL нет
+team-30-00: 1 текущих логов: ERROR/FATAL нет
+team-30-01: 1 текущих логов: ERROR/FATAL нет
+Веб: указатель, 12 интерфейсов, 110 CSS/JS, REST/JMX и ссылки доступны
+Веб: все 13 портов слушают только 127.0.0.1
+Веб: POST=405, logLevel/prof/delegation token=403
+Проверка YARN пройдена.
+team-30-en:
+123810 Jps
+123076 JobHistoryServer
+123018 ApplicationHistoryServer
+123146 ResourceManager
+123214 WebAppProxyServer
+team-30-nn:
+92209 NodeManager
+11763 DataNode
+92566 Jps
+11647 NameNode
+team-30-00:
+10001 DataNode
+90443 Jps
+90077 NodeManager
+team-30-01:
+11299 SecondaryNameNode
+134470 Jps
+134104 NodeManager
+11165 DataNode
+Total Nodes:3
+         Node-Id	     Node-State	Node-Http-Address	Number-of-Running-Containers
+ team-30-nn:8041	        RUNNING	  team-30-nn:8042	                           0
+ team-30-00:8041	        RUNNING	  team-30-00:8042	                           0
+ team-30-01:8041	        RUNNING	  team-30-01:8042	                           0
+Все итоговые команды завершились с кодом 0.
+
+Версии узлов
+
+team-30-en
+Ubuntu 24.04.5 LTS
+openjdk version "11.0.32.1" 2026-08-18
+OpenJDK Runtime Environment (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu)
+OpenJDK 64-Bit Server VM (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu, mixed mode, sharing)
+Hadoop 3.4.3
+Source code repository https://github.com/apache/hadoop.git -r 9d50c6884666e794e45102260a4017bb31802e1b
+Compiled by stevel on 2026-02-13T14:23Z
+Compiled on platform linux-x86_64
+Compiled with protoc 3.23.4
+From source with checksum 2331238c4c2929e66645316a32a8613
+This command was run using /opt/hadoop-3.4.3/share/hadoop/common/hadoop-common-3.4.3.jar
+Python 3.12.3
+nginx version: nginx/1.24.0 (Ubuntu)
+team-30-nn
+Ubuntu 24.04.5 LTS
+openjdk version "11.0.32.1" 2026-08-18
+OpenJDK Runtime Environment (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu)
+OpenJDK 64-Bit Server VM (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu, mixed mode, sharing)
+Hadoop 3.4.3
+Source code repository https://github.com/apache/hadoop.git -r 9d50c6884666e794e45102260a4017bb31802e1b
+Compiled by stevel on 2026-02-13T14:23Z
+Compiled on platform linux-x86_64
+Compiled with protoc 3.23.4
+From source with checksum 2331238c4c2929e66645316a32a8613
+This command was run using /opt/hadoop-3.4.3/share/hadoop/common/hadoop-common-3.4.3.jar
+team-30-00
+Ubuntu 24.04.5 LTS
+openjdk version "11.0.32.1" 2026-08-18
+OpenJDK Runtime Environment (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu)
+OpenJDK 64-Bit Server VM (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu, mixed mode, sharing)
+Hadoop 3.4.3
+Source code repository https://github.com/apache/hadoop.git -r 9d50c6884666e794e45102260a4017bb31802e1b
+Compiled by stevel on 2026-02-13T14:23Z
+Compiled on platform linux-x86_64
+Compiled with protoc 3.23.4
+From source with checksum 2331238c4c2929e66645316a32a8613
+This command was run using /opt/hadoop-3.4.3/share/hadoop/common/hadoop-common-3.4.3.jar
+team-30-01
+Ubuntu 24.04.5 LTS
+openjdk version "11.0.32.1" 2026-08-18
+OpenJDK Runtime Environment (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu)
+OpenJDK 64-Bit Server VM (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu, mixed mode, sharing)
+Hadoop 3.4.3
+Source code repository https://github.com/apache/hadoop.git -r 9d50c6884666e794e45102260a4017bb31802e1b
+Compiled by stevel on 2026-02-13T14:23Z
+Compiled on platform linux-x86_64
+Compiled with protoc 3.23.4
+From source with checksum 2331238c4c2929e66645316a32a8613
+This command was run using /opt/hadoop-3.4.3/share/hadoop/common/hadoop-common-3.4.3.jar
