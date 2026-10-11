@@ -58,7 +58,7 @@ sub_filter 'n.dnWebAddress = "http://" + dnHost + ":" + port;' 'n.dnWebAddress =
 EOF
 cat > "$stage/nginx.conf" <<'EOF'
 server {
-    listen 0.0.0.0:18080;
+    listen 127.0.0.1:18080;
     server_name _;
     charset utf-8;
     if ($request_method !~ ^(GET|HEAD)$) { return 405; }
@@ -69,7 +69,7 @@ EOF
 for i in "${!ports[@]}"; do
     cat >> "$stage/nginx.conf" <<EOF
 server {
-    listen 0.0.0.0:${ports[$i]};
+    listen 127.0.0.1:${ports[$i]};
     server_name _;
     if (\$request_method !~ ^(GET|HEAD)\$) { return 405; }
     if (\$arg_op ~* DELEGATIONTOKEN) { return 403; }
@@ -150,6 +150,16 @@ if ! sudo nginx -t; then
 fi
 if sudo systemctl is-active --quiet nginx; then
     action=reload
+    if python3 - 18080 "${ports[@]}" <<'PY'
+import subprocess
+import sys
+ports = set(sys.argv[1:])
+listeners = (line.split()[3].rsplit(':', 1) for line in subprocess.check_output(['ss', '-ltnH'], text=True).splitlines())
+sys.exit(0 if any(port in ports and address != '127.0.0.1' for address, port in listeners) else 1)
+PY
+    then
+        action=restart
+    fi
 else
     action=start
 fi
