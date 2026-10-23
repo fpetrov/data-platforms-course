@@ -1,0 +1,154 @@
+main: d4a338a
+2026-10-23 14:17:01 UTC
+team-30-en
+Ubuntu 24.04.5 LTS
+openjdk version "11.0.32.1" 2026-08-18
+OpenJDK Runtime Environment (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu)
+OpenJDK 64-Bit Server VM (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu, mixed mode, sharing)
+Hadoop 3.4.3
+Source code repository https://github.com/apache/hadoop.git -r 9d50c6884666e794e45102260a4017bb31802e1b
+Compiled by stevel on 2026-02-13T14:23Z
+Compiled on platform linux-x86_64
+Compiled with protoc 3.23.4
+From source with checksum 2331238c4c2929e66645316a32a8613
+This command was run using /opt/hadoop-3.4.3/share/hadoop/common/hadoop-common-3.4.3.jar
+psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)
+libpostgresql-jdbc-java	42.7.2-1
+Ver Cluster   Port Status Owner    Data directory                   Log file
+16  practice3 5433 online postgres /var/lib/postgresql/16/practice3 /var/log/postgresql/postgresql-16-practice3.log
+SQL snapshot before deploy
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/apache-hive-4.0.0-alpha-2-bin/lib/log4j-slf4j-impl-2.18.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop-3.4.3/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+bash homework-03/scripts/cluster.sh stop
+bash homework-03/scripts/deploy.sh
+/tmp/hive-practice3.YMDHHK/hive.tar.gz: OK
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/apache-hive-4.0.0-alpha-2-bin/lib/log4j-slf4j-impl-2.18.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop-3.4.3/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Metastore connection URL:	 jdbc:postgresql://127.0.0.1:5433/hive_metastore
+Metastore connection Driver :	 org.postgresql.Driver
+Metastore connection User:	 hive_metastore
+Hive distribution version:	 4.0.0-alpha-2
+Metastore schema version:	 4.0.0-alpha-2
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/apache-hive-4.0.0-alpha-2-bin/lib/log4j-slf4j-impl-2.18.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop-3.4.3/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Starting metastore validation
+
+Validating schema version
+[SUCCESS]
+
+Validating sequence number for SEQUENCE_TABLE
+[SUCCESS]
+
+Validating metastore schema tables
+[SUCCESS]
+
+Validating DFS locations
+[SUCCESS]
+
+Validating columns for incorrect NULL values.
+[SUCCESS]
+
+Done with metastore validation: [SUCCESS]
+/home/team/.cache/hive/apache-hive-4.0.0-alpha-2-bin.tar.gz: OK
+HiveServer2 и Metastore готовы.
+deploy exit: 0
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/apache-hive-4.0.0-alpha-2-bin/lib/log4j-slf4j-impl-2.18.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop-3.4.3/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Default homework03 SQL rows and partitions preserved across deploy
+1	Moscow	120.00	2026-10-01
+2	Moscow	80.00	2026-10-01
+3	Kazan	50.00	2026-10-01
+4	Moscow	100.00	2026-10-02
+5	Kazan	70.00	2026-10-02
+6	Kazan	30.00	2026-10-02
+7	Moscow	90.00	2026-10-03
+8	Kazan	60.00	2026-10-03
+9	Kazan	40.00	2026-10-03
+order_date=2026-10-01
+order_date=2026-10-02
+order_date=2026-10-03
+600 root:root /etc/hive-practice3/metastore/password
+640 root:hadoop /etc/hive-practice3/metastore/hive-site.xml
+homework-02 health
+team-30-en: ApplicationHistoryServer, JobHistoryServer, ResourceManager, WebAppProxyServer
+team-30-nn: DataNode, NameNode, NodeManager
+team-30-00: DataNode, NodeManager
+team-30-01: DataNode, NodeManager, SecondaryNameNode
+YARN: 3 здоровых NM, 4608 МиБ, 6 vcores
+homework-02 health exit: 0
+bash homework-03/scripts/verify.sh homework-03/cluster.env --restart
+Начало проверки: 2026-10-23T14:18:26.805269+00:00
+База проверки: homework03_check_cae3670816; HDFS: hdfs://team-30-nn:9000/user/hadoop/homework-03/external/homework03_check_cae3670816
+HDFS: 3 здоровых DN, блоки в порядке, safe mode OFF; YARN: 3 NM, 4608 МиБ, 6 vcores
+HS2: localhost; HMS: отдельный узел; PostgreSQL: localhost, schema 4.0.0-alpha-2
+Файл работы 1: 2621440 байт, SHA256 b1ccfef6cbd6d79b9b77f126b2a2f1a58d8f3d54beccdeeec3b7f772453ffcee
+Первая загрузка
+YARN: application_1791728881215_0021, FINISHED/SUCCEEDED; JHS: map 1/1, reduce 1/1
+YARN: application_1791728881215_0022, FINISHED/SUCCEEDED; JHS: map 1/1, reduce 1/1
+order_date=2026-10-01
+order_date=2026-10-02
+order_date=2026-10-03
+Данные загружены: homework03_check_cae3670816.orders_raw и homework03_check_cae3670816.orders, 9 заказов за три дня.
+SQL: raw и ORC совпали с CSV, 9 строк, 9 уникальных order_id, 3 партиции
+Суммы: всего 640.00; по дням 250.00/200.00/190.00; Moscow 390.00, Kazan 250.00
+Метаданные: external TEXTFILE/ORC, схема, partition DATE и HDFS LOCATION совпали
+JDBC: verify_cae3670816_a, sessionId=a1757ffd-a429-47ab-adad-02c0535d14c4, прочитано 9 строк
+JDBC: verify_cae3670816_b, sessionId=424de1bb-2f1c-45d0-8143-694437300473, прочитано 9 строк
+Одновременно открыты 2 JDBC-сессии: gauge 0 → 2
+После закрытия клиентов: исходные 0 сессий, утечек нет
+EXPLAIN DEPENDENCY: все 3 партиции → только order_date=2026-10-01
+MR: query tag=homework03_verify_cae3670816, input records=3, HDFS read=21332 байт
+YARN: application_1791728881215_0023, FINISHED/SUCCEEDED; JHS: map 1/1, reduce 1/1
+MR-агрегат совпал с независимым расчетом Python Decimal
+Повторная загрузка
+YARN: application_1791728881215_0024, FINISHED/SUCCEEDED; JHS: map 1/1, reduce 1/1
+YARN: application_1791728881215_0025, FINISHED/SUCCEEDED; JHS: map 1/1, reduce 1/1
+order_date=2026-10-01
+order_date=2026-10-02
+order_date=2026-10-03
+Данные загружены: homework03_check_cae3670816.orders_raw и homework03_check_cae3670816.orders, 9 заказов за три дня.
+SQL: raw и ORC совпали с CSV, 9 строк, 9 уникальных order_id, 3 партиции
+Суммы: всего 640.00; по дням 250.00/200.00/190.00; Moscow 390.00, Kazan 250.00
+Метаданные: external TEXTFILE/ORC, схема, partition DATE и HDFS LOCATION совпали
+ORC SHA256: hdfs://team-30-nn:9000/user/hadoop/homework-03/external/homework03_check_cae3670816/orders/order_date=2026-10-01/000000_0 bb72959d490d423c7240722eb6862ea5f193265cb4c6fee01b0e70edec5124e3
+ORC SHA256: hdfs://team-30-nn:9000/user/hadoop/homework-03/external/homework03_check_cae3670816/orders/order_date=2026-10-02/000000_0 84346ef344d47b1f4ca73d20c853cad9c5633cce6416d62bf630ae95cbf76552
+ORC SHA256: hdfs://team-30-nn:9000/user/hadoop/homework-03/external/homework03_check_cae3670816/orders/order_date=2026-10-03/000000_0 bfdd8671d6d7719f5870f5cc1fda904ee6c8b33676a23cf95d580b1c97bd8de6
+Перезапуск только Hive и выделенного PostgreSQL
+SQL: raw и ORC совпали с CSV, 9 строк, 9 уникальных order_id, 3 партиции
+Суммы: всего 640.00; по дням 250.00/200.00/190.00; Moscow 390.00, Kazan 250.00
+Метаданные: external TEXTFILE/ORC, схема, partition DATE и HDFS LOCATION совпали
+ORC SHA256: hdfs://team-30-nn:9000/user/hadoop/homework-03/external/homework03_check_cae3670816/orders/order_date=2026-10-01/000000_0 bb72959d490d423c7240722eb6862ea5f193265cb4c6fee01b0e70edec5124e3
+ORC SHA256: hdfs://team-30-nn:9000/user/hadoop/homework-03/external/homework03_check_cae3670816/orders/order_date=2026-10-02/000000_0 84346ef344d47b1f4ca73d20c853cad9c5633cce6416d62bf630ae95cbf76552
+ORC SHA256: hdfs://team-30-nn:9000/user/hadoop/homework-03/external/homework03_check_cae3670816/orders/order_date=2026-10-03/000000_0 bfdd8671d6d7719f5870f5cc1fda904ee6c8b33676a23cf95d580b1c97bd8de6
+После restart метаданные, SQL-данные и ORC SHA256 сохранены без повторной загрузки
+HDFS: 3 здоровых DN, блоки в порядке, safe mode OFF; YARN: 3 NM, 4608 МиБ, 6 vcores
+HS2: localhost; HMS: отдельный узел; PostgreSQL: localhost, schema 4.0.0-alpha-2
+Файл работы 1: 2621440 байт, SHA256 b1ccfef6cbd6d79b9b77f126b2a2f1a58d8f3d54beccdeeec3b7f772453ffcee
+PID HDFS/YARN и файл работы 1 сохранены
+Результат оставлен: homework03_check_cae3670816.orders; hdfs://team-30-nn:9000/user/hadoop/homework-03/external/homework03_check_cae3670816/orders
+Проверка Hive пройдена.
+verify --restart exit: 0
+bash homework-03/scripts/cluster.sh status
+active
+active
+active
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/apache-hive-4.0.0-alpha-2-bin/lib/log4j-slf4j-impl-2.18.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop-3.4.3/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+1
+status exit: 0
+2026-10-23 14:24:17 UTC
