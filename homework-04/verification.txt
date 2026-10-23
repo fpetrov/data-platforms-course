@@ -1,0 +1,59 @@
+Проверка чистого main: 9fe19f0677b9f665befdadb4d3f6aaffcd916a9d
+Каталог: /home/team/spark-final.YrvYPR
+Начало: 2026-10-23 15:55:37 UTC
+Ubuntu 24.04.5 LTS
+openjdk version "11.0.32.1" 2026-08-18
+OpenJDK Runtime Environment (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu)
+OpenJDK 64-Bit Server VM (build 11.0.32.1+1-post-1ubuntu1-24.04-Ubuntu, mixed mode, sharing)
+Python 3.12.3
+Hadoop 3.4.3
+Source code repository https://github.com/apache/hadoop.git -r 9d50c6884666e794e45102260a4017bb31802e1b
+Compiled by stevel on 2026-02-13T14:23Z
+Compiled on platform linux-x86_64
+Compiled with protoc 3.23.4
+From source with checksum 2331238c4c2929e66645316a32a8613
+This command was run using /opt/hadoop-3.4.3/share/hadoop/common/hadoop-common-3.4.3.jar
+Синтаксис Bash/Python: OK
+
+Команда: bash homework-04/scripts/deploy.sh
+/home/team/.cache/spark/spark-3.5.7-bin-hadoop3.tgz: OK
+Spark настроен для YARN и отдельного Metastore Hive.
+Spark 3.5.7 (git revision ed00d046951) built for Hadoop 3.3.4
+Build flags: -B -Pmesos -Pyarn -Pkubernetes -Psparkr -Pscala-2.12 -Phadoop-3 -Phive -Phive-thriftserver
+/opt/spark-practice4/jars/hadoop-client-api-3.3.4.jar
+/opt/spark-practice4/jars/hive-metastore-2.3.9.jar
+/opt/apache-hive-4.0.0-alpha-2-bin
+
+Команда: bash homework-04/scripts/verify.sh
+База проверки: homework04_check_797d1877d3; подробные логи: /tmp/spark-verify-797d1877d3-y1xyxmaf
+HDFS: 3 здоровых DN, блоки в порядке; YARN: 3 NM, 4608 МиБ/6 vcores; Hive active
+Предыдущие работы: sample.bin SHA256 b1ccfef6cbd6d79b9b77f126b2a2f1a58d8f3d54beccdeeec3b7f772453ffcee; Hive raw/ORC 9 строк, 3 партиции, 3 ORC
+До Spark: HDFS input 231 байт, SHA256 4793160b3d7b7042928dafcbee82802cfea941e10927c80976a048e6a11c2d68
+Event log: 6 успешных remote tasks, 6 stages; input 693, shuffle write/read 607/607 байт
+Executors: 1@team-30-nn, 2@team-30-01
+YARN: application_1791728881215_0043, SPARK FINISHED/SUCCEEDED, tag=homework04_verify_797d1877d3_first
+Beeline: 6 точных групп, 9 заказов, сумма 640.00; EXTERNAL ORC, DECIMAL(12,2), 3 DATE-партиции и LOCATION совпали
+EXPLAIN DEPENDENCY: 3 партиции → только order_date=2026-10-01
+Event log: 8 успешных remote tasks, 8 stages; input 693, shuffle write/read 607/607 байт
+Executors: 1@team-30-01, 2@team-30-nn
+YARN: application_1791728881215_0045, SPARK FINISHED/SUCCEEDED, tag=homework04_verify_797d1877d3_repeat
+Beeline: 6 точных групп, 9 заказов, сумма 640.00; EXTERNAL ORC, DECIMAL(12,2), 3 DATE-партиции и LOCATION совпали
+HDFS: 3 здоровых DN, блоки в порядке; YARN: 3 NM, 4608 МиБ/6 vcores; Hive active
+Предыдущие работы: sample.bin SHA256 b1ccfef6cbd6d79b9b77f126b2a2f1a58d8f3d54beccdeeec3b7f772453ffcee; Hive raw/ORC 9 строк, 3 партиции, 3 ORC
+Повтор: строки и метаданные совпали, дублей нет; PID и данные предыдущих работ сохранены
+Результат оставлен: homework04_check_797d1877d3.orders_daily; hdfs://team-30-nn:9000/user/hadoop/homework-04/external/homework04_check_797d1877d3/orders_daily
+Приложения: application_1791728881215_0043, application_1791728881215_0045
+Проверка Spark пройдена.
+
+Команда: bash homework-03/scripts/cluster.sh status
+active
+active
+active
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/apache-hive-4.0.0-alpha-2-bin/lib/log4j-slf4j-impl-2.18.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop-3.4.3/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+1
+Завершение: 2026-10-23 16:01:55 UTC
+Все команды завершились с кодом 0.

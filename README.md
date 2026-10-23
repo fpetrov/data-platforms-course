@@ -5,3 +5,5 @@
 [Практическая работа №2: YARN и веб-интерфейсы](homework-02/README.md)
 
 [Практическая работа №3: Hive](homework-03/README.md)
+
+[Практическая работа №4: Spark](homework-04/README.md)
