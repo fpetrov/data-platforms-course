@@ -75,7 +75,10 @@ def health(snapshot):
     for host, classes in zip([edge, *workers], expected):
         program = "/usr/lib/jvm/java-11-openjdk-amd64/bin/jps -l"
         output = command(["sudo", "-u", "hadoop", *program.split()]) if host == edge else remote(host, program)
-        processes = [line.split() for line in output.splitlines() if "org.apache.hadoop." in line]
+        families = ("org.apache.hadoop.hdfs.server.", "org.apache.hadoop.yarn.server.",
+                    "org.apache.hadoop.mapreduce.v2.hs.JobHistoryServer")
+        processes = [line.split() for line in output.splitlines()
+                     if len(line.split()) == 2 and line.split()[1].startswith(families)]
         check(len(processes) == len(classes) and {item[1].split(".")[-1] for item in processes} == classes,
               f"Неверные процессы на {host}: {output}")
         hdfs_processes[host] = sorted(item for item in processes if ".hdfs." in item[1])
