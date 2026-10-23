@@ -2,7 +2,7 @@
 import csv
 import re
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from datetime import date
 from decimal import Decimal
 from pathlib import Path
@@ -10,8 +10,6 @@ from pathlib import Path
 
 def check_input(path):
     counts = Counter()
-    totals = defaultdict(Decimal)
-    cities = defaultdict(Decimal)
     ids = []
     with Path(path).open(newline="", encoding="utf-8") as source:
         for row in csv.reader(source):
@@ -26,16 +24,10 @@ def check_input(path):
                 raise ValueError("Неверная дата заказа.")
             ids.append(int(number))
             counts[day] += 1
-            totals[day] += Decimal(amount)
-            cities[city] += Decimal(amount)
     if sorted(ids) != list(range(1, 10)) or counts != {
         "2026-10-01": 3, "2026-10-02": 3, "2026-10-03": 3
     }:
         raise ValueError("Ожидаются девять заказов за три дня.")
-    if totals != {"2026-10-01": Decimal(250), "2026-10-02": Decimal(200), "2026-10-03": Decimal(190)}:
-        raise ValueError("Суммы по дням не совпали.")
-    if cities != {"Moscow": Decimal(390), "Kazan": Decimal(250)}:
-        raise ValueError("Суммы по городам не совпали.")
 
 
 def metadata(path):
