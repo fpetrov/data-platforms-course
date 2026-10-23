@@ -84,6 +84,8 @@ fi
 python3 - "$role" <<'PY'
 import os,pathlib,sys,xml.etree.ElementTree as E
 v=os.environ; role=sys.argv[1]
+hdfs=E.parse(pathlib.Path(v['HADOOP_CONF_DIR'])/'hdfs-site.xml')
+replication=next(p.findtext('value') for p in hdfs.getroot().findall('property') if p.findtext('name')=='dfs.replication')
 props={
  'hive.execution.engine':'mr', 'hive.exec.mode.local.auto':'false', 'hive.fetch.task.conversion':'more',
  'hive.metastore.warehouse.dir':v['WAREHOUSE_DIR'], 'hive.metastore.warehouse.external.dir':v['EXTERNAL_DIR'],
@@ -94,7 +96,8 @@ props={
  'mapreduce.map.java.opts':'-Xmx'+v['TASK_HEAP_MB']+'m',
  'mapreduce.reduce.java.opts':'-Xmx'+v['TASK_HEAP_MB']+'m',
  'yarn.app.mapreduce.am.command-opts':'-Xmx'+v['TASK_HEAP_MB']+'m',
- 'mapreduce.task.io.sort.mb':'64', 'hive.auto.convert.join':'false'}
+ 'mapreduce.task.io.sort.mb':'64', 'mapreduce.client.submit.file.replication':replication,
+ 'hive.auto.convert.join':'false'}
 props['hive.aux.jars.path']=(pathlib.Path(v['HIVE_HOME'])/'lib/commons-collections-3.2.2.jar').as_uri()
 if role=='hms':
     # Hadoop 3.4 читает proxy hosts из core-site раньше hive-site.
