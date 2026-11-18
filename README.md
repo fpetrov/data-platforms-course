@@ -7,3 +7,5 @@
 [Практическая работа №3: Hive](homework-03/README.md)
 
 [Практическая работа №4: Spark](homework-04/README.md)
+
+[Практическая работа №5: Prefect](homework-05/README.md)
