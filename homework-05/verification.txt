@@ -1,0 +1,11 @@
+2026-11-18 23:50:57 UTC
+git main dd43c643c8115c59c45201ecdff733b48c5cfff2
+Prefect 3.9.3
+No broken requirements found.
+Prefect: flow cb4ef0de-e37b-4352-a393-df1f1643c41b Completed; load-input → process-orders, обе Completed
+HDFS input: 231 байт, SHA256 4793160b3d7b7042928dafcbee82802cfea941e10927c80976a048e6a11c2d68
+YARN: application_1791728881215_0055, SPARK FINISHED/SUCCEEDED; tag hw05-cb4ef0dee37b4352a393df1f1643c41b
+Spark: 6 успешных remote tasks; input 693, shuffle write/read 607/607 байт
+Hive: 6 точных групп, 9 заказов, сумма 640.00; EXTERNAL ORC, 3 даты; таблица homework05_check_1037bc34e2.orders_daily
+Проверка Prefect пройдена.
+exit 0
